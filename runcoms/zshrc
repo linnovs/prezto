@@ -29,31 +29,12 @@ alias gotop="TERM=xterm gotop"
 # this will not work if the xclip is not installed
 if command -v xclip &> /dev/null
 then
-  alias cbcopy='xclip -in -selection clipboard'
-  alias cbpaste='xclip -out -selection clipboard'
+    alias cbcopy='xclip -in -selection clipboard'
+    alias cbpaste='xclip -out -selection clipboard'
 else
-  alias cbcopy='echo notImplemented'
-  alias cbpaste='echo notImplemented'
+    alias cbcopy='echo notImplemented'
+    alias cbpaste='echo notImplemented'
 fi
-
-# this will set vim to be alias of nvim (if nvim is found)
-if command -v nvim &> /dev/null
-then
-  alias vim='nvim'
-fi
-
-# use for less to have syntax highlight
-# need to install source-highlight package
-if command -v source-highlight-esc.sh &> /dev/null
-then
-  export LESSOPEN='| source-highlight-esc.sh %s'
-  export LESS=' -R '
-fi
-
-# Agkozak themes config
-AGKOZAK_BLANK_LINES=1
-AGKOZAK_LEFT_PROMPT_ONLY=1
-AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
