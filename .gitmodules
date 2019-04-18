@@ -33,3 +33,9 @@
 	path = modules/prompt/external/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
+[submodule "modules/wd"]
+	path = modules/wd
+	url = git@github.com:mfaerevaag/wd.git
+[submodule "modules/prompt/external/agkozak-zsh-prompt"]
+	path = modules/prompt/external/agkozak-zsh-prompt
+	url = git@github.com:agkozak/agkozak-zsh-prompt.git
