@@ -1,4 +1,4 @@
-#
+# vim: ts=2:sw=2
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -11,3 +11,34 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# zsh-autosuggestions async config; any value can be set
+source $HOME/.zprezto/modules/prompt/external/agkozak-zsh-prompt/agkozak-zsh-prompt.plugin.zsh
+
+ZSH_AUTOSUGGEST_UES_ASYNC="zap"
+
+alias vim="nvim"
+alias zshrc="$EDITOR ~/.zshrc"
+alias open="xdg-open"
+
+# this will use the xclip to achive maclike copy and paste pipe action
+# this will not work if the xclip is not installed
+if command -v xclip &> /dev/null
+then
+    alias cbcopy='xclip -in -selection clipboard'
+    alias cbpaste='xclip -out -selection clipboard'
+else
+    alias cbcopy='echo notImplemented'
+    alias cbpaste='echo notImplemented'
+fi
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
+wd() {
+  . /home/linnovs/bin/wd/wd.sh
+}
+
+# Agkozak themes config
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
