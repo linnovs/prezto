@@ -1,4 +1,4 @@
-#
+# vim: ts=2:sw=2
 # Executes commands at login pre-zshrc.
 #
 # Authors:
@@ -17,9 +17,14 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
-export PAGER='less'
+export EDITOR='nvim'
+export VISUAL='nvim'
+if command -v most &>/dev/null
+then
+    export PAGER='most'
+else
+    export PAGER='less'
+fi
 
 #
 # Language
@@ -36,14 +41,33 @@ fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
+# fpath config
+fpath=(
+  $HOME/bin/wd
+  $fpath
+)
 # Set the list of directories that cd searches.
 # cdpath=(
 #   $cdpath
 # )
 
+# GO
+export GOPATH=$HOME/go
+
+# Android Home
+export ANDROID_PATH=$HOME/Android/Sdk
+
+# Pyenv Home
+export PYENV_ROOT=$HOME/.pyenv
+
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $GOPATH/bin
+  $ANDROID_PATH/tools
+  $ANDROID_PATH/tools/bin
+  $ANDROID_PATH/platform-tools
+  $PYENV_ROOT/bin
   $path
 )
 
