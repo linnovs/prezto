@@ -177,13 +177,9 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'brackets' \
   'pattern' \
   'line' \
-<<<<<<< HEAD
-  'root'
-  # 'cursor' \
-=======
   'cursor' \
   'root'
->>>>>>> 0dea9cb (Update default config for prezto)
+
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \

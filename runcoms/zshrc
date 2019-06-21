@@ -25,6 +25,11 @@ alias gotop="TERM=xterm gotop"
 #   alias docker="podman"
 # fi
 
+# if command -v podman &> /dev/null
+# then
+#   alias docker="podman"
+# fi
+
 # this will use the xclip to achive maclike copy and paste pipe action
 # this will not work if the xclip is not installed
 if command -v xclip &> /dev/null
