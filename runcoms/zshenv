@@ -17,3 +17,11 @@ export LANG=en_US.UTF-8
 # Colorterm
 export COLORTERM=truecolor
 
+# Stop ZSH vim mode delay
+export KEYTIMEOUT=1
+
+# Enable BUILDKIT for docker
+export DOCKER_BUILDKIT=1
+
+# Enable GO module
+export GO111MODULE=on
