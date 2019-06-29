@@ -23,8 +23,8 @@ fi
 # Editors
 #
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 if command -v most &>/dev/null
 then
     export PAGER='most'
