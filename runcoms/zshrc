@@ -16,7 +16,6 @@ source $HOME/.zprezto/modules/prompt/external/agkozak-zsh-prompt/agkozak-zsh-pro
 
 ZSH_AUTOSUGGEST_UES_ASYNC="zap"
 
-alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
 alias open="xdg-open"
 
