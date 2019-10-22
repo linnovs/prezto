@@ -21,7 +21,7 @@ export COLORTERM=truecolor
 export KEYTIMEOUT=1
 
 # Enable BUILDKIT for docker
-export DOCKER_BUILDKIT=1
+export DOCKER_BUILDKIT=0
 
 # Enable GO module
 export GO111MODULE=on
