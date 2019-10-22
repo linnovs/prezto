@@ -9,7 +9,7 @@
 # Terminal
 #
 
-export TERMINAL='termite'
+export TERMINAL='kitty'
 
 #
 # Browser
