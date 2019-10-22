@@ -40,10 +40,10 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt' \
   'spectrum' \
-  'syntax-highlighting' \
   'terminal' \
   'tmux' \
-  'utility'
+  'utility' \
+  'syntax-highlighting'
 
 #
 # Autosuggestions
