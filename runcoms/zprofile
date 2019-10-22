@@ -68,10 +68,10 @@ export PYENV_ROOT=$HOME/.pyenv
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{bin,sbin}
-  /usr/local/go/bin
   $HOME/.local/bin
   $HOME/.gem/ruby/2.6.0/bin
+  /usr/local/{bin,sbin}
+  /usr/local/go/bin
   $GOPATH/bin
   $ANDROID_PATH/tools
   $ANDROID_PATH/tools/bin
