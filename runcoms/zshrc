@@ -26,13 +26,19 @@ alias open="xdg-open"
 
 # this will use the xclip to achive maclike copy and paste pipe action
 # this will not work if the xclip is not installed
-if command -v xclip &> /dev/null
+if command -v wl-copy &> /dev/null
 then
-    alias cbcopy='xclip -in -selection clipboard'
-    alias cbpaste='xclip -out -selection clipboard'
+  alias cbcopy='wl-copy'
+  alias cbpaste='wl-paste'
 else
-    alias cbcopy='echo notImplemented'
-    alias cbpaste='echo notImplemented'
+  alias cbcopy='echo notImplemented'
+  alias cbpaste='echo notImplemented'
+fi
+
+# this will set vim to be alias of nvim (if nvim is found)
+if command -v nvim &> /dev/null
+then
+  alias vim='nvim'
 fi
 
 # use for less to have syntax highlight
@@ -60,7 +66,7 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias ssh="TERM=xterm ssh"
+alias ssh="TERM=xterm-256color ssh"
 
 wd() {
   . /home/linnovs/bin/wd/wd.sh
@@ -75,4 +81,39 @@ tmux_rename() {
   fi
 }
 
+code() {
+  if [[ ! -z "$TMUX" ]];then
+    tmux split-window -l 20% -v -d
+    vim
+  fi
+}
+
+uuidgenbytes() {
+  uuid=$(uuidgen | tr -d - )
+  bytes=""
+  for i in {1..32..2}
+  do
+    bytes+=$(printf '\\\\x%s' "$(echo $uuid | cut -c ${i}-$((i+1)))")
+  done
+  echo $bytes
+}
+
+uuidtobytes() {
+  uuid=$(echo $1 | tr -d -)
+  bytes=""
+  for i in {1..32..2}
+  do
+    bytes+=$(printf '\\\\x%s' "$(echo $uuid | cut -c ${i}-$((i+1)))")
+  done
+  echo $bytes
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/linnovs/google-cloud-sdk/path.zsh.inc' ]; then . '/home/linnovs/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/linnovs/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/linnovs/google-cloud-sdk/completion.zsh.inc'; fi
