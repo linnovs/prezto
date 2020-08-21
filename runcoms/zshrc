@@ -32,13 +32,19 @@ alias gotop="TERM=xterm gotop"
 
 # this will use the xclip to achive maclike copy and paste pipe action
 # this will not work if the xclip is not installed
-if command -v xclip &> /dev/null
+if command -v wl-copy &> /dev/null
 then
-    alias cbcopy='xclip -in -selection clipboard'
-    alias cbpaste='xclip -out -selection clipboard'
+  alias cbcopy='wl-copy'
+  alias cbpaste='wl-paste'
 else
-    alias cbcopy='echo notImplemented'
-    alias cbpaste='echo notImplemented'
+  alias cbcopy='echo notImplemented'
+  alias cbpaste='echo notImplemented'
+fi
+
+# this will set vim to be alias of nvim (if nvim is found)
+if command -v nvim &> /dev/null
+then
+  alias vim='nvim'
 fi
 
 autoload -U +X bashcompinit && bashcompinit
