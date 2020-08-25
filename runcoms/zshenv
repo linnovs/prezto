@@ -34,5 +34,3 @@ export GOPRIVATE=github.com/en-trak
 
 # FZF default command
 export FZF_DEFAULT_COMMAND='find . -path "*/\.git" -prune -o -type f -print -o -type l -print | sed s/^..//'
-
-export GITHUB_PERSONAL_TOKEN='defebdc0e529e38d9ca6716a0564651eca870e4a'
