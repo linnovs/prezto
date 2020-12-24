@@ -32,7 +32,6 @@
 [submodule "modules/prompt/external/powerlevel10k"]
 	path = modules/prompt/external/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-	shallow = true
 [submodule "modules/wd"]
 	path = modules/wd
 	url = git@github.com:mfaerevaag/wd.git
