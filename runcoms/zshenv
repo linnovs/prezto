@@ -11,8 +11,8 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 # Language settings
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LC_ALL=en_HK.UTF-8
+export LANG=en_HK.UTF-8
 
 # Colorterm
 export COLORTERM=truecolor

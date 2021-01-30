@@ -34,6 +34,10 @@ if command -v wl-copy &> /dev/null
 then
   alias cbcopy='wl-copy'
   alias cbpaste='wl-paste'
+elif command -v xsel &> /dev/null
+then
+  alias cbcopy='xsel -b -i'
+  alias cbpaste='xsel -b -o'
 else
   alias cbcopy='echo notImplemented'
   alias cbpaste='echo notImplemented'
