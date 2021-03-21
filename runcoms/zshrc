@@ -14,6 +14,9 @@ fi
 # zsh-autosuggestions async config; any value can be set
 ZSH_AUTOSUGGEST_UES_ASYNC="zap"
 
+unset BROWSER
+export BROWSER="brave"
+
 alias zshrc="$EDITOR ~/.zshrc"
 alias open="xdg-open"
 alias gotop="TERM=xterm gotop"
